@@ -5,25 +5,25 @@
     <meta charset="utf-8">
     <title>Document</title>
     <style>
-      .head{
+      body > :first-child{
         color: red;
       }
-      .a3:hover{
-        color: red;
-      }
-      .a3:active{
-        color: green;
-      }
-      .a3:focus{
+      p[tabindex]:focus{
         color:aqua;
       }
-      .sp1{
+      p[tabindex]:hover{
         color: red;
       }
-      .sp2{
+      p[tabindex]:active{
         color: green;
       }
-      .sp3{
+      p.a.c{
+        color: red;
+      }
+      p.a.c span span{
+        color: green;
+      }
+      p.a.c span span:last-child{
         color: blue;
       }
       :link{
@@ -32,7 +32,7 @@
       :visited{
         color: orange;
       }
-      [href*=mailto i]{
+      [href*="mailto:" i]{
         color: blue;
       }
       [href*=tel]{
@@ -41,30 +41,40 @@
       [href*=pdf i]{
         font-size: 30px;
       }
-      .ul1 :nth-of-type(n+4):nth-of-type(-n+7){
+      div.a li:nth-of-type(n+4):nth-of-type(-n+7){
         color: red;
       }
-      .ul2 :nth-of-type(-n+25){
+      div.b li:nth-of-type(-n+25){
         color: red;
       }
-      .ul2 :nth-of-type(n+65){
+      div.b li:nth-of-type(n+65){
         color: green;
       }
-      .ul2 :nth-of-type(n+35):nth-of-type(-n+50){
+      div.b li:nth-of-type(n+35):nth-of-type(-n+50){
         color: blue;
+      }
+      div.prime ul{
+        color:pink;
+      }
+      div.prime li:nth-child(1),
+      div.prime li:nth-child(2n+4),
+      div.prime li:nth-child(3n+9),
+      div.prime li:nth-child(5n+25),
+      div.prime li:nth-child(7n+49){
+        color:purple
       }
     </style>
   </head>
   <body>
-    <p class="head">红色</p>
+    <p>红色</p>
 
-    <p class="a3" tabindex="1">鼠标悬浮时为红色，按下去时为绿色，获得焦点时为蓝色</p>
+    <p class="a" tabindex="1">鼠标悬浮时为红色，按下去时为绿色，获得焦点时为蓝色</p>
 
-    <p>
-      <span class="sp1">
+    <p class="a c">
+      <span >
         红色
-        <span class="sp2">绿色</span>
-        <span class="sp3">蓝色</span>
+        <span >绿色</span>
+        <span >蓝色</span>
       </span>
     </p>
 
@@ -91,7 +101,7 @@
 
     <div class="a">
       <p>让下面的4567元素为红色</p>
-      <ul class="ul1">
+      <ul>
         <li>01</li>
         <li>02</li>
         <li>03</li>
@@ -111,7 +121,7 @@
       <p>让25及以内的元素为红色</p>
       <p>让65及以上的元素为绿色</p>
       <p>让35-50的元素为蓝色</p>
-      <ul class="ul2">
+      <ul>
         <li>01</li>
         <li>02</li>
         <li>03</li>
@@ -219,7 +229,7 @@
 
     <div class="prime">
       <p>让所有的质/素数(prime)（2，3，5，7，11，13……）跟合数（4，6，8，9，10……）为不同的颜色</p>
-      <ul class="ul3">
+      <ul>
         <li>01</li>
         <li>02</li>
         <li>03</li>
@@ -324,3 +334,4 @@
     </div>
   </body>
 </html>
+DA95VSN22C66
