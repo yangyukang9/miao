@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Bin</title>
+  <style>
+    body{
+      margin: 20px;
+    }
+    /* body加外边距 */
+    body>p{
+      height: 20px;
+      width: 100%;
+      background-color: red;
+      padding-left: 100px;
+    }
+    /* 给包裹aaaaa的p标签设置一个高20宽度随网页变换的红色背景颜色，且字体的左内边距为100px */
+    .div1{
+      border: black solid 2px;
+      width:600px ;
+      height: 250px;
+      padding: 10px;
+      margin: auto;
+      box-sizing: border-box;
+    }
+    /* 给包裹两段文字及粉色色块的外部div设置2px的黑色实线边框,内边距为10px,外边距居中，并对border-box设置宽高 */
+    .div2{
+      height: 50px;
+      background-color: pink;
+    }
+    /* 设置粉色色块的宽高 */
+    .div2:hover{
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+    /* 鼠标放上去的时候使粉色色块的左右外边距-10即归零以占满整个div */
+    .div1 p{
+      height: 4em;
+      overflow: auto;
+    }
+    /* 为两段文字的p标签设置高度和滚动条 */
+    .div3{
+      width: 0px;
+      height: 0px;
+      margin: auto;
+      border-top: 150px solid rgba(0,0,0,0);
+      border-left: 150px solid rgba(0,0,0,0);
+      border-right: 150px solid rgba(0,0,0,0);
+      border-bottom: 150px solid rgba(255,180,1,10);
+    }
+    /* 通过将宽高设置为0并且使上左右三方的边框透明化来显示下方正三角形 */
+  </style>
+</head>
+<body>
+  <p>aaaaa</p>
+  <div class="div1">
+     <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias beatae praesentium reiciendis quos, illo quisquam explicabo? Ullam quas earum unde sunt maiores repellat alias! Voluptatum dolorum ex obcaecati ab eaque.
+     </p>
+     <div class="div2"></div>
+     <p>ectionLorem ipsum, dolor sit amet consectetur adipisicing elit. Alias beatae praesentium reiciendis quos, illo quisquam explicabo? Ullam quas earum unde sunt maiores repellat alias! Voluptatum dolorum ex obcaecati ab eaque.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias beatae praesentium reiciendis quos, illo quisquam explicabo? Ullam quas earum unde sunt maiores repellat alias! Voluptatum dolorum ex obcaecati ab eaque.
+     </p>
+     <div class="div3"></div>
+  </div>
+</body>
+</html>
