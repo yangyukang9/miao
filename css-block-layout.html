@@ -4,36 +4,53 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>偷懒版</title>
+  <title>修改版</title>
   <style>
     body{
       margin: 0;
 
     }
-    .p1{
-
+    header{
+      background-color: black;
+    }
+    header div{
+      width: 600px;
       margin: auto;
-      text-align: center;
       color: white;
       background-color: black;
     }
     .div1{
       margin:auto;
-      width: 630px;
+      width: 600px;
     }
-    .p3{
+    .card div{
       width: 174px;
       height: 34px;
       background-color: coral;
       border: 3px solid;
-      float: left;
-      margin-right:30px;
       margin-top: 1px;
       text-align: center;
       line-height: 34px;
+      margin-top: 15px;
+    }
+    .card div:nth-child(n+5){
+      margin-left: 210px;
+    }
+    .card div:nth-child(n+9){
+      margin-left: 420px;
+    }
+    .card div:nth-child(4n+5){
+      margin-top: -205px;
+    }
+    .card div:hover{
+      background-color: red;
     }
     .p4{
       border-bottom:dotted 1px ;
+      margin: 0 auto;
+    }
+    .p41{
+      border-bottom:none;
       margin: 0 auto;
     }
     .p5{
@@ -44,27 +61,31 @@
   </style>
 </head>
 <body>
-  <p class="p1">hellow world 请调整浏览器窗口大小查看效果</p>
+  <header><div>hello world 请调整浏览器窗口大小查看效果</div></header>
+
   <div class="div1">
    <p class="p2"> 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px</p>
-   <p class="p3">宽180高40(包含边框)</p>
-   <p class="p3">产品</p>
-   <p class="p3">产品</p>
-   <p class="p3">水平间隙30px</p>
-   <p class="p3">产品</p>
-   <p class="p3">产品</p>
-   <p class="p3">垂直间隙15px</p>
-   <p class="p3">产品</p>
-   <p class="p3">产品</p>
-   <p class="p3">边框宽度3px</p>
-   <p class="p3">产品</p>
-   <p class="p3">产品</p>
 
+  <div class="card">
+   <div>宽180高40(包含边框)</div>
+   <div>水平间隙30px</div>
+   <div>垂直间隙15px</div>
+   <div>边框宽度3px</div>
+   <div>产品</div>
+   <div>产品</div>
+   <div>产品</div>
+   <div>产品</div>
+   <div>产品</div>
+   <div>产品</div>
+   <div>产品</div>
+   <div>产品</div>
+  </div>
+  <br>
    <p class="p4">link</p>
    <p class="p4">link</p>
    <p class="p4">link</p>
    <p class="p4">link</p>
-   <p class="p4">link</p>
+   <p class="p41">link</p>
 
   </div>
   <br>

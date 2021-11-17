@@ -7,16 +7,20 @@
   <title>JS Bin</title>
   <style>
     body{
-      margin: 20px;
+      margin: 0px;
     }
     /* body加外边距 */
-    body>p{
-      height: 20px;
-      width: 100%;
+    header{
       background-color: red;
-      padding-left: 100px;
     }
-    /* 给包裹aaaaa的p标签设置一个高20宽度随网页变换的红色背景颜色，且字体的左内边距为100px */
+    /* 设置header为红色 */
+    header div{
+      height: 20px;
+      width:600px;
+      background-color: red;
+      margin: auto;
+    }
+    /* 给包裹aaaaa的div标签设置一个高20宽度为600px的红色背景颜色*/
     .div1{
       border: black solid 2px;
       width:600px ;
@@ -54,7 +58,8 @@
   </style>
 </head>
 <body>
-  <p>aaaaa</p>
+  <header><div>aaaaa</div></header>
+  <br>
   <div class="div1">
      <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias beatae praesentium reiciendis quos, illo quisquam explicabo? Ullam quas earum unde sunt maiores repellat alias! Voluptatum dolorum ex obcaecati ab eaque.
      </p>
