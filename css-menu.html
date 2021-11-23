@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        li{
+            border: solid 1px red;
+        }
+        .main-menu li {
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .main-menu>li {
+            display: inline-block;
+        }
+
+        .main-menu li:hover {
+            background-color: gold;
+        }
+
+        .main-menu ul {
+            display: none;
+            position: absolute;
+        }
+
+        .main-menu>li:hover>ul {
+            display: block;
+        }
+
+        li:hover>ul {
+            display: block;
+        }
+
+        ul ul ul {
+            left: 100%;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="main-menu">
+        <li>文件
+            <ul>
+                <li>新建文件</li>
+                <li>新建文件夹</li>
+                <li>新建窗口</li>
+            </ul>
+        </li>
+        <li>文件
+            <ul>
+                <li>next
+                    <ul>
+                        <li>aa</li>
+                        <li>bbb
+                            <ul>
+                                <li>lll</li>
+                                <li>kkk</li>
+                                <li>jjj</li>
+                            </ul>
+                        </li>
+                        <li>cccc</li>
+                    </ul>
+                </li>
+                <li>新建文件夹</li>
+                <li>新建窗口</li>
+            </ul>
+        </li>
+        <li>文件
+            <ul>
+                <li>新建文件</li>
+                <li>king
+                    <ul>
+                        <li>123</li>
+                        <li>456
+                            <ul>
+                                <li>poi</li>
+                                <li>asd</li>
+                                <li>zxc</li>
+                            </ul>
+                        </li>
+                        <li>789</li>
+                    </ul>
+                </li>
+                <li>新建窗口</li>
+            </ul>
+        </li>
+        <li>文件
+            <ul>
+                <li>新建文件</li>
+                <li>新建文件夹</li>
+                <li>新建窗口</li>
+            </ul>
+        <li>
+    </ul>
+
+</body>
+
+</html>
