@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>立方体</title>
+    <style>
+
+*{
+      margin:0 auto;
+      padding:0;
+    }
+  
+    div.cube{
+      width:200px;
+      perspective:1000px;
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+    .cube>div.cube-main{
+      width:200px;
+      height:200px;
+      position:relative;
+      transform-style: preserve-3d;
+      transform:rotateX(-50deg) rotateY(-50deg) rotateZ(0deg);
+      animation:move 8s infinite linear;
+    }
+    @keyframes move{
+      0% {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+      100% {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
+    }
+    .cube-main>div{
+      width:100%;
+      height:100%;
+      border-radius:20px;
+      position:absolute;
+      background:white;
+      box-shadow:0 0 10px currentColor;
+      transition: background 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+    .cube-main div.front{
+      color: skyblue;
+      background-color:skyblue;
+      transform:translateZ(100px);
+    }
+    .cube-main div.back{
+      color: deeppink;
+      background-color:deeppink;
+      transform:translateZ(-100px) rotateY(180deg);
+    }
+    .cube-main div.left{
+      color: greenyellow;
+      background-color:greenyellow;
+      transform:translateX(-100px) rotateY(-90deg);
+    }
+    .cube-main div.right{
+      color: tomato;
+      background-color:tomato;
+      transform:translateX(100px) rotateY(90deg);
+    }
+    .cube-main div.top{
+      color: snow;
+      background-color:snow;
+      transform:translateY(-100px) rotateX(90deg);
+    }
+    .cube-main div.bottom{
+      color: khaki;
+      background-color:khaki;
+      transform:translateY(100px) rotateX(-90deg);
+    }
+    </style>
+</head>
+<body>
+    <div class="cube">
+        <div class="cube-main">
+          <div class="front"></div>
+          <div class="back"></div>
+          <div class="left"></div>
+          <div class="right"></div>
+          <div class="top"></div>
+          <div class="bottom"></div>
+        </div>
+    </div>
+</body>
+</html>

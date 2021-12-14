@@ -1,0 +1,536 @@
+* {
+  // box-shadow: inset 0 0 1px 0px red;
+  // background-color: rgba(0, 0, 0, 0.08);]
+  font-style: normal;
+}
+@font-face {
+  font-family: IconFont;
+  src: url(./mi.woff);
+}
+.IconFont-cart::before {
+  content: "\E60C";
+  font-size: 20px;
+  position: absolute;
+  left: 10px;
+}
+.IconFont-arrow-right-big:before {
+  content: "\E623";
+}
+body {
+  font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei,
+    Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  margin: 0;
+  overflow-y: scroll;
+  font-family: IconFont;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+img {
+  border: 0;
+}
+.clear-fix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.clearfix::after,
+.clearfix::before {
+  content: "";
+  display: table;
+}
+.row::before,
+.row::after {
+  content: "";
+  display: table;
+}
+.site-nav {
+  height: 40px;
+  background-color: #333;
+  nav {
+    width: 1226px;
+    margin: auto;
+    div {
+      float: left;
+    }
+    a {
+      display: inline-block;
+      color: rgb(176, 176, 176);
+      line-height: 40px;
+      font-size: 12px;
+      &:hover {
+        color: white;
+      }
+    }
+    .sep {
+      color: #424242;
+      margin: 0 0.05em;
+    }
+    .top-nav-right {
+      float: right;
+      .shopping-cart {
+        position: relative;
+        float: right;
+        background-color: #424242;
+        width: 120px;
+        margin-left: 25px;
+        .shopping-cart-link {
+          width: 120px;
+          height: 40px;
+          display: inline-block;
+          text-align: center;
+          position: relative;
+        }
+        .shopping-cart-list {
+          position: absolute;
+          right: 0;
+          top: 100%;
+          width: 320px;
+          height: 0;
+          text-align: center;
+          line-height: 100px;
+          transition: 0.3s;
+          overflow: hidden;
+          background-color: white;
+          font-size: 12px;
+          color: #666;
+          box-shadow: 0 0 10px 0 rgb(199, 199, 199);
+          z-index: 150;
+        }
+        &:hover {
+          background-color: white;
+          .shopping-cart-link {
+            color: #ff6700;
+          }
+          .shopping-cart-list {
+            height: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+.product-nav {
+  height: 100px;
+  position: relative;
+  .product-nav-inner {
+    width: 1226px;
+    margin: auto;
+    .logo-link {
+      float: left;
+      margin-top: 22px;
+      margin-right: 180px;
+      img {
+        width: 56px;
+        height: 56px;
+      }
+    }
+    ul.product-menu {
+      float: left;
+      display: flex;
+      font-size: 16px;
+      &:hover {
+        .product-sub-menu {
+          height: 230px;
+        }
+      }
+      li {
+        a {
+          color: black;
+          padding: 0 10px;
+          height: 100px;
+          display: inline-block;
+          line-height: 100px;
+        }
+        &:hover {
+          .product-sub-menu {
+            z-index: 100;
+            transition: height 0.5s 0.2s, z-index 0s 0s;
+          }
+        }
+
+        .product-sub-menu {
+          background-color: white;
+          height: 0;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          overflow: hidden;
+          z-index: 50;
+          transition: height 0.5s 0.2s, z-index 2s;
+          ul {
+            width: 1226px;
+            margin: auto;
+            height: 100%;
+            display: flex;
+            li {
+              width: calc(100% / 6);
+              div {
+                width: 100%;
+                height: 175px;
+                margin-top: 35px;
+                cursor: pointer;
+                img {
+                  display: block;
+                  width: 160px;
+                  height: 110px;
+                  margin: 15px auto;
+                }
+                .goods-name {
+                  display: block;
+                  height: 20px;
+                  text-align: center;
+                  font-size: 12px;
+                  line-height: 20px;
+                }
+                .goods-price {
+                  display: block;
+                  height: 20px;
+                  text-align: center;
+                  font-size: 12px;
+                  line-height: 20px;
+                  color: rgb(255, 103, 0);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .product-nav-search {
+      float: right;
+      display: flex;
+      margin-top: 25px;
+      input {
+        outline: none;
+        width: 245px;
+        height: 50px;
+        box-sizing: border-box;
+        border: 1px solid rgb(220, 220, 220);
+        &:focus {
+          border-color: rgb(255, 103, 0);
+          + button {
+            border-color: rgb(255, 103, 0);
+          }
+        }
+      }
+      button {
+        background: white;
+        width: 50px;
+        border: 1px solid rgb(220, 220, 220);
+        border-left: none;
+        background-image: url(search2.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        &:hover {
+          background-color: rgb(255, 103, 0);
+          background-image: url(search1.png);
+        }
+      }
+    }
+  }
+}
+.view {
+  position: relative;
+  height: 460px;
+  width: 1226px;
+  margin: auto;
+  .menu-left {
+    position: absolute;
+    display: inline-block;
+    width: 234px;
+    height: 460px;
+    background-color: rgba(139, 141, 147, 0.8);
+    font-size: 14px;
+    z-index: 5;
+    .menu-box {
+      margin-top: 20px;
+      .out-box {
+        height: 42px;
+        line-height: 42px;
+        text-indent: 30px;
+        color: white;
+        position: relative;
+        &:hover {
+          background-color: rgb(255, 103, 0);
+        }
+        &::after {
+          content: "";
+          width: 7px;
+          height: 7px;
+          position: absolute;
+          display: inline-block;
+          border-left: 2px solid white;
+          border-top: 2px solid white;
+          transform: rotate(135deg);
+          top: 16px;
+          right: 25px;
+        }
+        .in-box {
+          width: 993px;
+          position: absolute;
+          left: 234px;
+          top: -20px;
+          z-index: 1500;
+          background-color: white;
+          height: 460px;
+          display: flex;
+          ul {
+            width: 248px;
+            li { 
+              float: left;
+              width: 265px;
+              height: 76px;
+              a {
+                display: block;
+                padding: 18px 18px;
+                line-height: 40px;
+                color: #333;
+                img {
+                  width: 40px;
+                  height: 40px;
+                  float: left; 
+                }
+                span {
+                  float: left;
+                  width: 176px;
+                  line-height: 40px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .slider {
+    width: 1226px;
+    height: 460px;
+    input {
+      display: none;
+      &:nth-child(1):checked ~ .slides .slide:nth-child(1) img,
+      &:nth-child(2):checked ~ .slides .slide:nth-child(2) img,
+      &:nth-child(3):checked ~ .slides .slide:nth-child(3) img,
+      &:nth-child(4):checked ~ .slides .slide:nth-child(4) img {
+        opacity: 1;
+      }
+      &:nth-child(1):checked ~ .slides .slide:nth-child(1) label,
+      &:nth-child(2):checked ~ .slides .slide:nth-child(2) label,
+      &:nth-child(3):checked ~ .slides .slide:nth-child(3) label,
+      &:nth-child(4):checked ~ .slides .slide:nth-child(4) label {
+        z-index: 6;
+        display: block;
+      }
+      &:nth-child(1):checked ~ .indicators label:nth-child(1),
+      &:nth-child(2):checked ~ .indicators label:nth-child(2),
+      &:nth-child(3):checked ~ .indicators label:nth-child(3),
+      &:nth-child(4):checked ~ .indicators label:nth-child(4) {
+        background-color: white;
+      }
+    }
+    .slides {
+      height: 100%;
+      position: relative;
+      .slide {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        label {
+          display: none;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          height: 70px;
+          width: 42px;
+          line-height: 70px;
+          text-align: center;
+          cursor: pointer;
+          &:hover {
+            background-color: rgba(100, 100, 100, 0.5);
+          }
+          &:first-child {
+            border-radius: 0 3px 3px 0;
+            left: 234px;
+          }
+          &:nth-child(2) {
+            border-radius: 3px 0 0 3px;
+            right: 0;
+          }
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          transition: 1s;
+        }
+      }
+    }
+    .indicators {
+      position: absolute;
+      right: 30px;
+      bottom: 19px;
+      label {
+        margin: 3px;
+        width: 5px;
+        height: 5px;
+        border: 2px solid rgb(148, 162, 171);
+        background-color: rgb(145, 145, 145);
+        display: inline-block;
+        border-radius: 999px;
+        cursor: pointer;
+        &:hover {
+          background-color: white;
+        }
+      }
+    }
+    .prev::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      border-left: 3px solid white;
+      border-top: 3px solid white;
+      transform: rotate(-45deg);
+      margin-top: 23px;
+    }
+    .next::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      border-right: 3px solid white;
+      border-bottom: 3px solid white;
+      transform: rotate(-45deg);
+      margin-top: 23px;
+    }
+  }
+}
+.home-sub {
+  height: 170px;
+  width: 1226px;
+  margin: 15px auto;
+
+  .sub1 {
+    background-color: rgb(95, 87, 80);
+    width: 235px;
+    height: 100%;
+    display: inline-block;
+    ul {
+      li {
+        position: relative;
+        float: left;
+        width: 70px;
+        height: 82px;
+        padding: 0 3px;
+        text-align: center;
+        a {
+          display: block;
+          padding-top: 18px;
+          text-overflow: ellipsis;
+          color: white;
+          opacity: 0.7;
+          transition: opacity 0.2s;
+          font-size: 12px;
+          img {
+            display: block;
+            width: 24px;
+            height: 24px;
+            margin: 0 auto 4px;
+          }
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .sub2 {
+    width: 980px;
+    height: 100%;
+    float: right;
+    ul {
+      .first {
+        margin: 0;
+      }
+      li {
+        float: left;
+        margin-left: 15px;
+        transition: 0.4s;
+        &:hover {
+          box-shadow: 4px 4px 8px 2px rgb(235, 235, 235),
+            4px 4px 8px 2px rgb(235, 235, 235),
+            -4px 4px 8px 2px rgb(235, 235, 235);
+        }
+        img {
+          display: block;
+          width: 316px;
+        }
+      }
+    }
+  }
+}
+.home-content {
+  background-color: rgb(245, 245, 245);
+  margin: 25px auto;
+  width: 100%;
+  .banner {
+    width: 1226px;
+    margin: auto;
+    img {
+      margin: 22px auto;
+      width: 1226px;
+      cursor: pointer;
+    }
+  }
+  .box-hd {
+    width: 1226px;
+    position: relative;
+    height: 58px;
+    margin: 0 auto;
+    h2 {
+      font-size: 22px;
+      margin: 0;
+      font-weight: 200;
+      line-height: 58px;
+      color: #333;
+    }
+    .more {
+      position: absolute;
+      top: 0;
+      right: 0;
+      a {
+        font-size: 16px;
+        line-height: 58px;
+        color: #424242;
+        transition: all 0.4s;
+        i {
+          width: 12px;
+          height: 12px;
+          padding: 4px;
+          margin-left: 8px;
+          border-radius: 16px;
+          font-size: 12px;
+          line-height: 12px;
+          background: #b0b0b0;
+          color: #fff;
+          vertical-align: 1px;
+          transition: all 0.4s;
+        }
+        &:hover {
+          color: rgb(255, 103, 0);
+          i {
+            background: rgb(255, 103, 0);
+          }
+        }
+      }
+    }
+  }
+}
