@@ -53,12 +53,12 @@
  </script>
  <script type="xxx" id="ch0103/09" >
      var r = Number(prompt('输入圆的半径'))
-     var d =  2 * r
-     var L =  2 * Math.PI * r
-     var S =  Math.PI * (r * r)
-     console.log('直径为'+ d.toFixed(4))
-     console.log('周长为'+ L.toFixed(4))
-     console.log('面积为'+ S.toFixed(4))
+     var PI = 3.14
+     var d =  (2 * r).toFixed(4)
+     var L =  (2 * PI * r).toFixed(4)
+     var S =  (PI * (r * r)).toFixed(4)
+     console.log('直径为'+ d,'周长为'+ L,'面积为'+ S)
+    
 </script>
 <script type="xxx" id="ch0103/10" >
     var r1 = Number(prompt('输入r1阻抗')) 
@@ -74,15 +74,16 @@
 </script>
 <script type="xxx" id="ch0103/12">
     var r = Number(prompt('输入球的半径'))
-    var V = 4 / 3 * Math.PI * (r * r * r)
+    var PI = 3.14
+    var V = 4 / 3 * PI * (r * r * r)
     console.log(V.toFixed(2))
 </script>
-<script type="xxx" id="ch0103/13">
-    var n = parseInt(prompt('输入一个三位数'))
-    var x = n % 10
-    var y = n / 10 % 10
-    var z = n / 100
-    console.log(parseInt(x),parseInt(y),parseInt(z))
+<script  id="ch0103/13">
+    var n = Number(prompt('输入一个三位数'))
+    var x = String(n % 10)
+    var y = parseInt(n % 100 /10)
+    var z = parseInt(n / 100)
+    console.log(x+y+z)
 </script>
 <script type="xxx" id="ch0103/14">
     var h = parseInt(prompt('输入桶的深度-单位cm'))
@@ -130,7 +131,7 @@
     var c = a * b
     console.log(c)
  </script>
- <script id="ch0103/20">
+ <script type="xxx" id="ch0103/20">
     var n = parseInt(prompt('输入n'))
     var m = 2 ** n
     console.log(m)
