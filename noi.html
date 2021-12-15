@@ -164,9 +164,8 @@
     }
  </script>
  <script type="xxx" id="ch0104/04">
-    var n = String(prompt('请输入任意字符'))
-    console.log(x)
-    if(x % 2 != 0){
+    var x = String(prompt('请输入任意字符'))
+    if(x.charCodeAt() % 2 != 0){
         console.log('YES')
     }else{
         console.log('NO')
@@ -301,13 +300,13 @@
     }
 </script>
 <script type="xxx" id="ch0104/16">
-    var a = Number(prompt('输入第一条边长'))
-    var b = Number(prompt('输入第二条边长'))
-    var c = Number(prompt('输入第三条边长'))
+    var a = Number(+prompt('输入第一条边长'))
+    var b = Number(+prompt('输入第二条边长'))
+    var c = Number(+prompt('输入第三条边长'))
     if(a + b > c && a + c > b && b + c > a){
-        console.log('Yes')
+        console.log('yes')
     }else{
-        console.log('No')
+        console.log('no')
     }
 </script>
 <script type="xxx" id="ch0104/17">
