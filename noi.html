@@ -209,20 +209,16 @@
 </script>
 <script type="xxx" id="ch0104/09">
     var x = parseInt(prompt('请输入一个整数'))
-    if(x % 3 ==0 && x % 5 == 0 && x % 7 ==0){
-        console.log(3,5,7)
-    }else if(x % 3 ==0 && x % 5 == 0){
-        console.log(3,5)
-    }else if(x % 3 ==0 && x % 7 == 0){
-        console.log(3,7)
-    }else if(x % 5 ==0 && x % 7 == 0){
-        console.log(5,7)
-    }else if(x % 3 ==0){
+    if(x % 3 ==0 || x % 5 == 0 || x % 7 ==0){
+      if(x % 3 == 0){
         console.log(3)
-    }else if(x % 5 ==0){
+      }
+      if(x % 5 == 0){
         console.log(5)
-    }else if(x % 7 ==0){
+      }
+      if(x % 7 == 0){
         console.log(7)
+      }
     }else{
         console.log('n')
     }
@@ -273,15 +269,14 @@
 <script type="xxx" id="ch0104/14">
     var a = Number(prompt('输入重量'))
     var b = prompt('是否加急？ y/n')
-    if(a <= 1000 && b == 'y'){
-        console.log(13)
-    }else if(a > 1000 && b == 'y' ){
-        console.log(Math.ceil((a - 1000)/500) * 4 + 8 +5)
-    }else if(a > 1000){
-        console.log(Math.ceil((a - 1000)/500) * 4 + 8)
-    }else{
-        console.log(8)
+    var price = 8
+    if(a > 1000){
+        price = price + Math.ceil((a - 1000)/500) * 4 
     }
+    if(b == 'y' ){
+        price = price + 5
+    }
+    console.log(price)
 </script>
 <script type="xxx" id="ch0104/15">
     var a = Number(prompt('输入第一个数'))
@@ -346,7 +341,7 @@
     }
 </script>
 <script type="xxx" id="ch0104/20">
-
+    
 </script>
 <script type="xxx" id="ch0104/21">
     var n = parseInt(prompt('输入苹果个数'))
@@ -354,4 +349,224 @@
     var y = parseInt(prompt('输入时间'))
     var z = Math.floor(n - y / x)
     console.log(parseInt(z))
+</script>
+<script type="xxx" id="ch0105/01">
+    var n = parseInt(prompt('输入学生人数'))
+    var s = 0
+    for(var i = 1;i<= n;i++){
+        s += parseInt(prompt('输入第' +i+'个学生的年龄')) 
+    }
+    console.log((s / n).toFixed(2))
+  </script>
+<script type="xxx" id="ch0105/02">
+    var x = 0
+    for(var i = 1;i <= 12; i++){
+         x += Number(+prompt('输入每月的结余'))
+    }
+    console.log('$' + (x / 12).toFixed(2))
+</script>
+<script type="xxx" id="ch0105/03">
+    var x = parseInt(+prompt('输入样本容量'))
+    var y = 0
+    for(var i = 1;i<= x;i++){
+        y += parseFloat(+prompt('输入样本数据')) 
+    }
+    console.log(parseFloat(y / x).toFixed(4))
+</script>
+<script type="xxx" id="ch0105/04">
+      var n = parseInt(+prompt('请问有多少个整数')) 
+      var m = 0
+      for(var i = 1;i <= n;i++){
+          m += parseInt(+prompt('输入第' + i +'个整数'))
+      }
+      console.log(m,parseFloat(m / n).toFixed(5))
+</script>
+<script type="xxx" id="ch0105/05">
+      var n = parseInt(prompt('输入参加考试的人数'))
+      arr = []
+      for(i=1;i<=n;i++){
+        arr.push(parseInt(prompt('输入分数'))) 
+        var m = Math.max(...arr)
+      }
+      console.log(m) 
+</script>
+<script type="xxx" id="ch0105/06">
+      var n = parseInt(prompt('输入序列长度'))
+      var arr = []
+      for(i=1;i<=n;i++){
+        arr.push(parseInt(prompt('输入序列中的整数')))
+        var a = Math.max(...arr)
+        var b = Math.min(...arr)
+      }
+      console.log(a-b )
+</script>
+<script type="xxx" id="ch0105/07">
+    var n = parseInt(prompt('输入参与决赛项目的天数'))
+    var a = 0
+    var b = 0
+    var c = 0
+    for(i=1;i<=n;i++){
+        a += parseInt(prompt('输入第'+i+'天的金牌数量'))
+    }
+    for(i=1;i<=n;i++){
+        b += parseInt(prompt('输入第'+i+'天的银牌数量'))
+    }
+    for(i=1;i<=n;i++){
+        c += parseInt(prompt('输入第'+i+'天的铜牌数量'))
+    }
+    var m = a + b + c
+    console.log(a,b,c,m)
+</script>
+<script type="xxx" id="ch0105/08">
+      var n = parseInt(prompt('输入多边形的边数'))
+      var b = 0
+      for(i = 1;i<n;i++){
+        var m = parseInt(prompt('输入其他角的度数'))
+        b = b + m 
+      }
+      var a = (n-2) * 180 -b
+      console.log(a)
+</script>
+<script type="xxx" id="ch0105/09">
+      var m = parseInt(prompt('m'))
+      var n = parseInt(prompt('n'))
+      var x = 0
+      for(i = m;i<=n;i++){
+        if(i % 2 ==1){
+            x = x + i
+        }
+      }
+      console.log(x)
+</script>
+<script type="xxx" id="ch0105/010">
+      var m = parseInt(prompt('m'))
+      var n = parseInt(prompt('n'))
+      var x = 0
+      for(i = m;i<=n;i++){
+        if(i % 17 == 0){
+            x = x + i
+        }
+      }
+      console.log(x)
+</script>
+<script type="xxx" id="ch0105/011">
+      var k = parseInt(prompt('请输入有多少个正整数'))
+      var x = 0
+      var y = 0
+      var z = 0
+      for(var i = 1;i <= k;i++){
+        var j = parseInt(+prompt('请输入第'+i+'个正整数'))
+        if(j == 1){
+            x = x+1
+        }
+        if(j == 5){
+            y = y+1
+        }
+        if(j == 10){
+            z = z+1
+        }
+      }
+      console.log(x,y,z)
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
+</script>
+<script type="xxx" id="ch0105/01">
+      
 </script>
