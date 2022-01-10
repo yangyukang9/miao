@@ -5,7 +5,7 @@ var yangyukang9 = {
     let num = 0;
     for (let i = 0; i < array.length; i++) {
       chunks1.push(array[i]);
-      result++;
+      num++;
       if (num == size) {
         num = 0;
         chunks2.push(chunks1);
@@ -29,4 +29,9 @@ var yangyukang9 = {
   },
 
   concat: function (array, values) {},
+
+  drop: function (array, [n = 1]) {
+    let drops = [];
+    for (let i = array.length - 1; i >= 0; i--) {}
+  },
 };
