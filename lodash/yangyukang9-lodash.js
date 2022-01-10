@@ -30,8 +30,27 @@ var yangyukang9 = {
 
   concat: function (array, values) {},
 
-  drop: function (array, [n = 1]) {
-    let drops = [];
-    for (let i = array.length - 1; i >= 0; i--) {}
+  drop: function (array, n = 1) {
+    let res = [];
+    let len = array.length;
+    if (len < n) {
+      return res;
+    }
+    for (let i = n; i < len; i++) {
+      res.push(array[i]);
+    }
+    return res;
+  },
+
+  dropRight: function (array, n = 1) {
+    let res = [];
+    let len = array.length - 1;
+    if (len < n) {
+      return res;
+    }
+    for (let i = 0; i <= len - n; i++) {
+      res.push(array[i]);
+    }
+    return res;
   },
 };
