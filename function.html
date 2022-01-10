@@ -1,31 +1,125 @@
+
 <script>
-  function factorial(n){
-    let result = 1
-    for(let i = 1;i <= 1;i++){
-      result *= 1
+  //链表的写法
+  function arrayToList(array){
+    var head = {
+      val:0,
+      next: null
+    }
+    var prev = head
+    for(let i = 0; i < array.length; i++){
+      var node = {
+        val : array[i],
+        next : null,
+      }
+      prev.next = node
+      prev = node
+    }
+   return head.next
+  }
+
+
+//倒序链表的写法
+    function arrayToList2(array){
+    var head = {
+      val:array[0],
+      next: null
+    }
+    var prev = head
+    for(let i = array.length - 1; i >= 0 ; i--){
+      var node = {
+        val : array[i],
+        next : null,
+      }
+      prev.next = node
+      prev = node
+    }
+   return head.next
+  }
+
+  //递归链表
+  function arrayToListR(array){
+    if (array.length == 0) {
+      return null
+    }
+    var head = {
+      val: array[0],
+      next: null
+    }
+    var tail = arrayToListR(Array.slice(1))
+    head.next = tail
+    return head
+  }
+
+  //将数组从start开始到结束转换为链表
+  function arrayToListR2(array,start = 0){
+    if (start == array.length) {
+      return null
+    }
+    var head = {
+      val: array[start],
+      next: null
+    }
+    var tail = arrayToListR2(array,start + 1)
+    head.next = tail
+    return head
+  }
+
+  //将链表转为数组
+  function listToArray(head){
+    if (head == null) {
+      return []
+    }
+    var result = []
+    while(head){
+      result.push(head.val)
+      head = head.next
     }
     return result
   }
 
-
-  function isPrime(n){
-    for(let i = 1; i * i <= n;i++){
-      if (n % i == 0) {
-        return false 
-      }
+  //将链表转为数组(递归)
+  function listToArrayR(head){
+    if (head == null) {
+      return []
     }
-    return true
-  }
     
-  function qiao7(n){
-    for(let i = 0;i <= n;i++){
-      if (n % 7 == 0) {
-        return true
-      }
-    }
+    var ary = listToArrayR(head.next)
+    return[head.val].concat(ary)
   }
 
 
 
-4
+
+  function nth(list,n){
+    var p = list 
+    var c = 0
+
+    while(p && c < n){
+      c++
+      p = p.next
+    }
+    return p.val4
+  }
+</script>
+
+<script>
+//倒序链表
+var reverseList = function(head) {
+  if (!head || !head.next) {
+    return head
+  }
+  var nodes = []
+  while(head){
+    nodes.push(head.val)
+    head = head.next
+  }
+  nodes.reverse()
+  for (let i = 0; i < nodes.length - 1; i++) {
+    nodes[i].next = nodes[i + 1] 
+  }
+  nodes[i].next = null
+  return nodes[0]
+}
+
 </script>
