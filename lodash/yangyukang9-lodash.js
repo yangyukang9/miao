@@ -1,5 +1,3 @@
-const { first, template } = require("lodash");
-
 var yangyukang9 = {
   chunk: function (array, size) {
     let chunks1 = [];
